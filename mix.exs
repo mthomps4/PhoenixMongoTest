@@ -35,7 +35,7 @@ defmodule Lab.Mixfile do
      {:phoenix_html, "~> 2.6"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
     #  {:mongodb_ecto, "~> 0.1"},
-     {:mongodb_ecto, github: "michalmuskala/mongodb_ecto", branch: "ecto-2.1"},
+     {:mongodb_ecto, github: "michalmuskala/mongodb_ecto", branch: "ecto-2"},
      {:ecto, "~> 2.1", override: true},
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"}]
