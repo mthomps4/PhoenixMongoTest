@@ -28,17 +28,49 @@ defmodule Lab.Mixfile do
   #
   # Type `mix help deps` for examples and options.
   defp deps do
+    # [{:phoenix, "~> 1.3.0-rc"},
+    #  {:phoenix_pubsub, "~> 1.0"},
+    #  {:phoenix_ecto, "~> 3.2"},
+    # #  {:postgrex, ">= 0.0.0"},
+    #  {:phoenix_html, "~> 2.6"},
+    #  {:phoenix_live_reload, "~> 1.0", only: :dev},
+    # #  {:mongodb_ecto, "~> 0.1"},
+    #  {:mongodb_ecto, github: "michalmuskala/mongodb_ecto", branch: "ecto-2"},
+    # #  {:mongodb_ecto, github: "zeroasterisk/mongodb_ecto", branch: "elixir-ecto-v2.0.1"},
+    #
+    #  {:ecto, "~> 2.0", override: true},
+    #  {:gettext, "~> 0.11"},
+    #  {:cowboy, "~> 1.0"}
+    # ]
+
     [{:phoenix, "~> 1.3.0-rc"},
      {:phoenix_pubsub, "~> 1.0"},
-     {:phoenix_ecto, "~> 3.2"},
-    #  {:postgrex, ">= 0.0.0"},
-     {:phoenix_html, "~> 2.6"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
-    #  {:mongodb_ecto, "~> 0.1"},
-     {:mongodb_ecto, github: "michalmuskala/mongodb_ecto", branch: "ecto-2"},
-     {:ecto, "~> 2.1", override: true},
+     {:mix_test_watch,
+       github: "zeroasterisk/mix-test.watch",
+       branch: "62-revert-fs-0.9.1-to-match-phoenix_live_reload",
+       only: :dev, runtime: false
+     },
+     #{:mix_test_watch, "~> 0.4", only: :dev, runtime: false},
+     {:poolboy, ">= 0.0.0"},
+     # the mongodb_ecto & phoenix_ecto, both need to require same {:ecto, "~> 2.0"}
+     {:phoenix_ecto, github: "phoenixframework/phoenix_ecto", ref: "v3.0.1"},
+     {:mongodb_ecto, github: "zeroasterisk/mongodb_ecto", branch: "elixir-ecto-v2.0.1"},
+     #--REVERTED-- {:phoenix_ecto, "~> 3.2"},
+     #--NOTREADY-- {:mongodb_ecto, github: "michalmuskala/mongodb_ecto", branch: "ecto-2.1"},
+     # {:postgrex, ">= 0.0.0"},
+     # {:logger_file_backend, "0.0.8"},
+     {:ecto_enum, "~> 1.0"},
      {:gettext, "~> 0.11"},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+     {:poison, "~> 3.1"},
+     {:timex, "~> 3.0"},
+     {:uuid, "~> 1.1" },
+     {:credo, "~> 0.8", only: [:dev, :test], runtime: false},
+     {:absinthe, "~> 1.3"},
+     # {:absinthe, github: "absinthe-graphql/absinthe", branch: "master"},
+     {:absinthe_plug, github: "absinthe-graphql/absinthe_plug", branch: "master"}
+    ]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.
