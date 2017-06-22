@@ -17,7 +17,7 @@ defmodule Lab.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {Lab.Application, []},
-     extra_applications: [:logger, :runtime_tools]]
+     extra_applications: [:logger, :runtime_tools, :mongodb_ecto, :ecto]]
   end
 
   # Specifies which paths to compile per environment.
@@ -31,9 +31,12 @@ defmodule Lab.Mixfile do
     [{:phoenix, "~> 1.3.0-rc"},
      {:phoenix_pubsub, "~> 1.0"},
      {:phoenix_ecto, "~> 3.2"},
-     {:postgrex, ">= 0.0.0"},
+    #  {:postgrex, ">= 0.0.0"},
      {:phoenix_html, "~> 2.6"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
+    #  {:mongodb_ecto, "~> 0.1"},
+     {:mongodb_ecto, github: "michalmuskala/mongodb_ecto", branch: "ecto-2.1"},
+     {:ecto, "~> 2.1", override: true},
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"}]
   end

@@ -10,10 +10,17 @@ config :lab, Lab.Web.Endpoint,
 config :logger, level: :warn
 
 # Configure your database
-config :lab, Lab.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "lab_test",
-  hostname: "localhost",
-  pool: Ecto.Adapters.SQL.Sandbox
+# config :lab, Lab.Repo,
+#   adapter: Ecto.Adapters.Postgres,
+#   username: "postgres",
+#   password: "postgres",
+#   database: "lab_test",
+#   hostname: "localhost",
+#   pool: Ecto.Adapters.SQL.Sandbox
+
+# config :lab, Repo,
+  # database: "ecto-mongo-test",
+  # hostname: "localhost"
+  #   # username: "mongodb",
+  #   # password: "mongosb",
+  # pool: Ecto.Adapters.SQL.Sandbox
