@@ -12,7 +12,7 @@ defmodule Customer do
 
   def changeset(customers, params \\ %{}) do
     customers
-    |> cast(params, [:_id, :name, :age])
+    |> cast(params, [:name, :age])
     |> validate_required([:name, :age])
   end
 
@@ -27,12 +27,18 @@ defmodule Customer do
     Repo.all(query)
   end
 
-  def create_customer(attributes \\ %{}) do
-    chset = Customer.changeset(%Customer{}, attributes)
-    case Repo.insert(chset) do
-      {:ok, post} -> IO.inspect(post)
-      {:error, chset} -> IO.inspect(chset)
-    end
+  def create_customer(name, age) do
+    # chset = Customer.changeset(%Customer{}, attributes)
+    # struct = %Customer{name: name, age: age}
+    IO.puts("******")
+    IO.inspect name
+    IO.inspect age
+    IO.puts("******")
+    Repo.insert(%Customer{name: name, age: age})
+    # case Repo.insert(%Customer{name: name, age: age}) do
+    #   {:ok, post} -> IO.puts(post)
+    #   {:error, chset} -> IO.puts(chset)
+    # end
   end
 
 end
