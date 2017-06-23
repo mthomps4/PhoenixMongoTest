@@ -4,7 +4,7 @@ defmodule Customer do
   import Ecto.Query
   alias Lab.Repo
 
-  @primary_key {:_id, :binary_id, autogenerate: true}
+  @primary_key {:_id, :string, autogenerate: false}
   schema "customers" do
     field :name, :string
     field :age, :integer, default: 0
@@ -12,7 +12,7 @@ defmodule Customer do
 
   def changeset(customers, params \\ %{}) do
     customers
-    |> cast(params, [:name, :age])
+    |> cast(params, [:_id, :name, :age])
     |> validate_required([:name, :age])
   end
 
@@ -20,11 +20,18 @@ defmodule Customer do
     Repo.all(Customer)
   end
 
-  def create_customer(attrs \\ %{}) do
-    chset = Customer.changeset(%Customer{}, attrs)
+  def by_name(name) do
+    query = from u in "customers",
+          where: u.name == ^name,
+          select: u
+    Repo.all(query)
+  end
+
+  def create_customer(attributes \\ %{}) do
+    chset = Customer.changeset(%Customer{}, attributes)
     case Repo.insert(chset) do
-        {:ok, post} -> IO.inspect(post)
-        {:error, chset} -> IO.inspect(chset)
+      {:ok, post} -> IO.inspect(post)
+      {:error, chset} -> IO.inspect(chset)
     end
   end
 

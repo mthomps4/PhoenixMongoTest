@@ -61,6 +61,3 @@ config :lab, Lab.Repo,
   adapter: Mongo.Ecto,
   database: "ecto-mongo-test",
   hostname: "localhost"
-  # username: "root",
-  # password: "password"
-  # url: "mongodb://127.0.0.1:27017/ecto-mongo-test"

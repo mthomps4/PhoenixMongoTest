@@ -17,7 +17,18 @@ defmodule Lab.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {Lab.Application, []},
-     extra_applications: [:logger, :runtime_tools, :mongodb_ecto, :ecto]]
+     extra_applications: [
+       :ecto,
+       :mongodb,
+       # :mongodb_ecto,
+       :runtime_tools,
+       :logger,
+       # :logger_file_backend,
+       :poolboy,
+       :uuid,
+       # :httpoison,
+       :absinthe_plug
+     ]]
   end
 
   # Specifies which paths to compile per environment.
@@ -45,6 +56,7 @@ defmodule Lab.Mixfile do
 
     [{:phoenix, "~> 1.3.0-rc"},
      {:phoenix_pubsub, "~> 1.0"},
+     {:phoenix_html, "~> 2.6"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:mix_test_watch,
        github: "zeroasterisk/mix-test.watch",
@@ -57,8 +69,10 @@ defmodule Lab.Mixfile do
      {:phoenix_ecto, github: "phoenixframework/phoenix_ecto", ref: "v3.0.1"},
      {:mongodb_ecto, github: "zeroasterisk/mongodb_ecto", branch: "elixir-ecto-v2.0.1"},
      #--REVERTED-- {:phoenix_ecto, "~> 3.2"},
-     #--NOTREADY-- {:mongodb_ecto, github: "michalmuskala/mongodb_ecto", branch: "ecto-2.1"},
-     # {:postgrex, ">= 0.0.0"},
+     #  --NOTREADY-- {:mongodb_ecto, github: "michalmuskala/mongodb_ecto", branch: "ecto-2.1"},
+    #  {:mongodb_ecto, github: "michalmuskala/mongodb_ecto", branch: "ecto-2"},
+    #  {:ecto, "~> 2.0", override: true},
+     #  {:postgrex, ">= 0.0.0"},
      # {:logger_file_backend, "0.0.8"},
      {:ecto_enum, "~> 1.0"},
      {:gettext, "~> 0.11"},

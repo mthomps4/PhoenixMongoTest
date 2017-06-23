@@ -18,9 +18,6 @@ config :logger, level: :warn
 #   hostname: "localhost",
 #   pool: Ecto.Adapters.SQL.Sandbox
 
-# config :lab, Repo,
-  # database: "ecto-mongo-test",
-  # hostname: "localhost"
-  #   # username: "mongodb",
-  #   # password: "mongosb",
-  # pool: Ecto.Adapters.SQL.Sandbox
+config :lab, Repo,
+  database: "ecto-mongo-test",
+  hostname: "localhost"
