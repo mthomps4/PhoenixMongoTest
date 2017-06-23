@@ -27,18 +27,21 @@ defmodule Customer do
     Repo.all(query)
   end
 
+    @doc """
+    Create customer with name and age params
+    Reminder protocol String.Chars not implemented -- Use IO.inspect
+
+    Example
+
+    iex> Customer.create_customer("James", 23)
+    %Customer{__meta__: #Ecto.Schema.Metadata<:loaded, "customers">, _id: "594d7ba8de395d127a2ae531", age: 23, name: "James"}
+
+    """
   def create_customer(name, age) do
-    # chset = Customer.changeset(%Customer{}, attributes)
-    # struct = %Customer{name: name, age: age}
-    IO.puts("******")
-    IO.inspect name
-    IO.inspect age
-    IO.puts("******")
-    Repo.insert(%Customer{name: name, age: age})
-    # case Repo.insert(%Customer{name: name, age: age}) do
-    #   {:ok, post} -> IO.puts(post)
-    #   {:error, chset} -> IO.puts(chset)
-    # end
+    case Repo.insert(%Customer{name: name, age: age}) do
+      {:ok, post} -> IO.inspect(post)
+      {:error, struct} -> IO.inspect(struct)
+    end
   end
 
 end
