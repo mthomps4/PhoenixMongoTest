@@ -20,7 +20,6 @@ defmodule Lab.Mixfile do
      extra_applications: [
        :ecto,
        :mongodb,
-       # :mongodb_ecto,
        :runtime_tools,
        :logger,
        # :logger_file_backend,
@@ -77,6 +76,7 @@ defmodule Lab.Mixfile do
      {:ecto_enum, "~> 1.0"},
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
+     # Poision 3.+ flags older phoenix ecto -- no breaking changes override:true
      {:poison, "~> 3.1", override: true},
      {:timex, "~> 3.0"},
      {:uuid, "~> 1.1" },

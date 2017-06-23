@@ -4,7 +4,7 @@ defmodule Customer do
   import Ecto.Query
   alias Lab.Repo
 
-  @primary_key {:_id, :string, autogenerate: false}
+  @primary_key {:_id, :binary_id, autogenerate: true}
   schema "customers" do
     field :name, :string
     field :age, :integer, default: 0
