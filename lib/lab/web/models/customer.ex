@@ -27,14 +27,12 @@ defmodule Customer do
     Repo.all(query)
   end
 
-    @doc """
-    Create customer with name and age params
-    Reminder protocol String.Chars not implemented -- Use IO.inspect
+  @doc """
+    `create_customer` take s a name :string, and age :integer to create a new `%Customer`
 
-    Example
-
-    iex> Customer.create_customer("James", 23)
-    %Customer{__meta__: #Ecto.Schema.Metadata<:loaded, "customers">, _id: "594d7ba8de395d127a2ae531", age: 23, name: "James"}
+    ## Examples
+        iex> Customer.create_customer("Joe")
+        %Customer{__meta__: #Ecto.Schema.Metadata<:loaded, "customers">, _id: "594e926fe689261fbb102443", age: 32, name: "Joe"}
 
     """
   def create_customer(name, age) do

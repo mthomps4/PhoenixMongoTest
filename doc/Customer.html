@@ -107,8 +107,7 @@
     <a href="#create_customer/2">create_customer(name, age)</a>
   </div>
   
-    <div class="summary-synopsis"><p>Create customer with name and age params
-Reminder protocol String.Chars not implemented — Use IO.inspect</p>
+    <div class="summary-synopsis"><p><code class="inline">create_customer</code> take s a name :string, and age :integer to create a new <code class="inline">%Customer</code></p>
 </div>
   
 </div>
@@ -195,11 +194,14 @@ Reminder protocol String.Chars not implemented — Use IO.inspect</p>
     
   </div>
   <section class="docstring">
-    <p>Create customer with name and age params
-Reminder protocol String.Chars not implemented — Use IO.inspect</p>
-<p>Example</p>
-<p>iex&gt; Customer.create<em>customer(“James”, 23)
-%Customer{<em>_meta</em></em>: #Ecto.Schema.Metadata&lt;:loaded, “customers”&gt;, _id: “594d7ba8de395d127a2ae531”, age: 23, name: “James”}</p>
+    <p><code class="inline">create_customer</code> take s a name :string, and age :integer to create a new <code class="inline">%Customer</code></p>
+<h2 id="create_customer/2-examples" class="section-heading">
+  <a href="#create_customer/2-examples" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Examples
+</h2>
+
+<pre><code class="iex elixir">iex&gt; Customer.create_customer(&quot;Joe&quot;)
+%Customer{__meta__: #Ecto.Schema.Metadata&lt;:loaded, &quot;customers&quot;&gt;, _id: &quot;594e926fe689261fbb102443&quot;, age: 32, name: &quot;Joe&quot;}</code></pre>
 
   </section>
 </div>
