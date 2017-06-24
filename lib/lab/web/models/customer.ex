@@ -56,7 +56,7 @@ defmodule Customer do
     `update_by_id` update customer information by _id.
 
     ## Examples
-      iex(18)> Customer.update_by_id("594e907ce689261a7af36d32", %{name: "Timmy"})
+      Customer.update_by_id("594e907ce689261a7af36d32", %{name: "Timmy"})
 
     """
   def update_by_id(id, params \\ %{}) do
