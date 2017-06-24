@@ -57,12 +57,13 @@ defmodule Lab.Mixfile do
      {:phoenix_pubsub, "~> 1.0"},
      {:phoenix_html, "~> 2.6"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
-     {:mix_test_watch,
-       github: "zeroasterisk/mix-test.watch",
-       branch: "62-revert-fs-0.9.1-to-match-phoenix_live_reload",
-       only: :dev, runtime: false
-     },
-     #{:mix_test_watch, "~> 0.4", only: :dev, runtime: false},
+     {:percept, github: 'erlang/percept'},
+    #  {:mix_test_watch,
+    #    github: "zeroasterisk/mix-test.watch",
+    #    branch: "62-revert-fs-0.9.1-to-match-phoenix_live_reload",
+    #    only: :dev, runtime: false
+    #  },
+     {:mix_test_watch, "~> 0.4", only: :dev, runtime: false},
      {:poolboy, ">= 0.0.0"},
      # the mongodb_ecto & phoenix_ecto, both need to require same {:ecto, "~> 2.0"}
      {:phoenix_ecto, github: "phoenixframework/phoenix_ecto", ref: "v3.0.1"},

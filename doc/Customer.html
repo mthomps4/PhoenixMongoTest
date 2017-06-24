@@ -95,10 +95,13 @@
     <a href="#by_name/1">by_name(name)</a>
   </div>
   
+    <div class="summary-synopsis"><p><code class="inline">by_name</code> takes a name and returns all customers with <code class="inline">name</code></p>
+</div>
+  
 </div>
 <div class="summary-row">
   <div class="summary-signature">
-    <a href="#changeset/2">changeset(customers, params \\ %{})</a>
+    <a href="#changeset/2">changeset(customer, params \\ %{})</a>
   </div>
   
 </div>
@@ -160,7 +163,11 @@
     
   </div>
   <section class="docstring">
-    
+    <p><code class="inline">by_name</code> takes a name and returns all customers with <code class="inline">name</code></p>
+<p>  ## Examples</p>
+<pre><code class="iex elixir">iex&gt; Customer.by_name(&quot;Joe&quot;)
+[%{&quot;age&quot; =&gt; 32, &quot;name&quot; =&gt; &quot;Joe&quot;}]</code></pre>
+
   </section>
 </div>
 <div class="detail" id="changeset/2">
@@ -172,7 +179,7 @@
       <span class="icon-link" aria-hidden="true"></span>
       <span class="sr-only">Link to this function</span>
     </a>
-    <span class="signature">changeset(customers, params \\ %{})</span>
+    <span class="signature">changeset(customer, params \\ %{})</span>
     
     
     
@@ -200,8 +207,8 @@
   Examples
 </h2>
 
-<pre><code class="iex elixir">iex&gt; Customer.create_customer(&quot;Joe&quot;)
-%Customer{__meta__: #Ecto.Schema.Metadata&lt;:loaded, &quot;customers&quot;&gt;, _id: &quot;594e926fe689261fbb102443&quot;, age: 32, name: &quot;Joe&quot;}</code></pre>
+<pre><code class="elixir">Customer.create_customer(&quot;Bill&quot;, 32)
+%Customer{__meta__: #Ecto.Schema.Metadata&lt;:loaded, &quot;customers&quot;&gt;, _id: &quot;594eac40e689264fa67f9d31&quot;, age: 32, name: &quot;Bill&quot;}</code></pre>
 
   </section>
 </div>
